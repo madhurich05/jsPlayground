@@ -43,3 +43,32 @@ function removeDupes(str) {
 removeDupes('aabbccdd') returns 'abcd'
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Highest frequency string in the list of strings
+function highestFrequency(strings) {
+
+    let m = {};
+    let max = 0;
+    let hfStr = "";
+
+    for (let str of strings) {
+        // If the string is already in map, then increment count
+        if(str in m) {
+            m[[str]] =m[[str]] + 1;                               
+        } else{
+            m[[str]] = 1;
+        }
+        if (m[[str]] > max) {
+            max = m[[str]];
+            hfStr = str;
+        }
+    }       
+    return hfStr;   
+}
+['a', 'b', 'c', 'c', 'd', 'e']	c	
+['abc', 'def', 'abc', 'def', 'abc']	abc	
+['abc', 'def']	abc	
+['abc', 'abc', 'def', 'def', 'def', 'ghi' ghi
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------
+ 
